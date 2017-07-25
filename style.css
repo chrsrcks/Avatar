@@ -1,0 +1,43 @@
+
+div {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  border: 0px solid black;
+  margin-left: 10px;
+  font-size: 20px;
+}
+button {
+  border: 1px outset grey;
+  border-radius: 10px;
+}
+
+.open {
+  border-bottom: 1px solid white;
+  background-color: HoneyDew ;
+}
+.close {
+  background-color: white;
+}
+.open::before {
+  content: "◇";
+  padding-right: 10px;
+}
+.close::before {
+  content: "◆";
+  padding-right: 10px;
+}
+.open:hover {
+  background-color: Lavender ;
+}
+.close:hover {
+  background-color: Lavender ;
+}
+.slider_div {
+  /*border-left: 3px double black;
+  padding-left: 10px;*/
+}
+.slider_div::before {
+  content: "╰";
+  padding-right: 10px;
+}
