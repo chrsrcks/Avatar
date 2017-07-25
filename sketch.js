@@ -32,6 +32,7 @@ var canvas;
 function setup(){
   canvas = createCanvas(600, 400);
   canvas.position(window.innerWidth/2 - 400, window.innerHeight/2 - 200);
+  canvas.mouseClicked(gen_random);
   colorMode(HSB);
 
   // explorer   DO THIS in ejs?
