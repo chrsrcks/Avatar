@@ -247,6 +247,9 @@ function view_hide(elmt) {
     case 'Mouth':
       mouth = !mouth;
       break;
+    case 'Ears':
+      ears = !ears;
+      break;
   }
   // ⚙
   if (elmt.target.innerHTML == '⛯') elmt.target.innerHTML = '⛒';
