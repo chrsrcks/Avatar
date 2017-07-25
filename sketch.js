@@ -15,29 +15,29 @@ var avatar = [
   { name: 'Mouth',
     shape: 0,
     size: 0,
-    color: 0 }/*,
+    color: 0 },
   { name: 'Ears',
     shape: 0,
     size: 0,
-    color: 0 },
+    color: 0 }/*,
   { name: 'Hair',
     shape: 0,
     size: 0,
     color: 0 }*/
 ];
 //console.log(avatar);
-var head=true, eyes=true, nose=true, mouth=true, ears, hair, brown, beard;
+var head=true, eyes=true, nose=true, mouth=true, ears=true, hair=true, brown=true, beard=true;
 var canvas;
 
 function setup(){
   canvas = createCanvas(600, 400);
-  canvas.position(window.innerWidth/2 - 400, window.innerHeight/2 - 200);
+  canvas.position(window.innerWidth/2 - 400, 50);
   canvas.mouseClicked(gen_random);
   colorMode(HSB);
 
   // explorer   DO THIS in ejs?
   var explorer_div = createDiv(' ❖ Avatar  ');
-  explorer_div.position(window.innerWidth/2 + 200, window.innerHeight/2 - 200);
+  explorer_div.position(window.innerWidth/2 + 200, 50);
   var random_button = createButton('random');
   random_button.parent(explorer_div);
   random_button.mouseClicked(gen_random);
@@ -83,6 +83,31 @@ function setup(){
 
 function draw(){
   background(220, 5, 100, 1);
+  
+  if (ears) {
+    var size = map(select('#Ears_size').value(), 1, 100,  30, 200);
+    var head_size_x = map(select('#Head_size').value(), 1, 100, 200, 500);
+    var shape_index = round(map(select('#Ears_shape').value(), 1, 100, 0, 2));
+    fill(select('#Ears_color').value(), 50, 50, 1);
+    strokeWeight(size/10);
+    stroke(select('#Head_color').value(), 50, 50, 1);
+
+    switch (shape_index){
+      case 0:
+        ellipse(width/2 - head_size_x/2, height/3, size);
+        ellipse(width/2 + head_size_x/2, height/3, size);
+        break;
+      case 1:
+        ellipse(width/2 - head_size_x/2, height/3, size/2, size);
+        ellipse(width/2 + head_size_x/2, height/3, size/2, size);
+        break;
+      case 2:
+        ellipse(width/2 - head_size_x/2, height/3, size, size/2);
+        ellipse(width/2 + head_size_x/2, height/3, size, size/2);
+        break;
+    }
+  }
+  
   noStroke();
   if (head) {
     var size = map(select('#Head_size').value(), 1, 100, 200, 500);
