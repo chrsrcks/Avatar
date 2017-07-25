@@ -37,7 +37,7 @@ function setup(){
 
   // explorer   DO THIS in ejs?
   var explorer_div = createDiv(' ❖ Avatar  ');
-  explorer_div.position(window.innerWidth/2 + 200, 50);
+  explorer_div.position(window.innerWidth/2 + 200, 10);
   var random_button = createButton('random');
   random_button.parent(explorer_div);
   random_button.mouseClicked(gen_random);
