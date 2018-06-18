@@ -35,7 +35,7 @@ function setup(){
   canvas.mouseClicked(gen_random);
   colorMode(HSB);
 
-  // explorer   DO THIS in ejs?
+  // explorer
   var explorer_div = createDiv(' ❖ Avatar  ');
   explorer_div.position(window.innerWidth/2 + 200, 10);
   var random_button = createButton('random');
@@ -77,7 +77,8 @@ function setup(){
     var slider = createSlider(1, 360, 180);
     slider.parent(slider_div);
     slider.id(avatar[i].name + '_color');
-
+    
+    gen_random();
   }
 }
 
