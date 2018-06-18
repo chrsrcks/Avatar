@@ -53,7 +53,7 @@ function setup(){
     button_view.mouseClicked(view_hide);
     //button_view.style('display', 'block');
 
-    console.log(avatar[i]);
+    //console.log(avatar[i]);
     var slider_div = createDiv('Shape: ');
     slider_div.parent(div);
     slider_div.style('display', 'block');
@@ -79,6 +79,7 @@ function setup(){
     slider.id(avatar[i].name + '_color');
     
     gen_random();
+    console.log(avatar[i]);
   }
 }
 
